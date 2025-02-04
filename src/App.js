@@ -1,14 +1,14 @@
 import React from "react";
 import Header from "./components/Header";
-import AddForm from "./components/AddForm";
 import MedicineList from "./components/MedicineList";
+import BillProvider from "./components/BillProvider";
 function App() {
+
   return (
-    <div>
+    <BillProvider>
     <Header/>
-    <AddForm/>
     <MedicineList/>
-    </div>
+    </BillProvider>
   );
 }
 
