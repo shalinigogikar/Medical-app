@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import classes from "./AddForm.module.css";
 const AddForm=(props)=>{
  const [medicine,setMedicine]=useState({
    medicineName: "",
@@ -45,24 +46,24 @@ const AddForm=(props)=>{
         });
     };
     return(
-        <form onSubmit={submitFormHandler}>
-            <div>
+        <form onSubmit={submitFormHandler} className={classes.form}>
+            <div className={classes['form-group']}>
                 <label htmlFor="medicine">medicineName</label>
                 <input type="text" value={medicine.medicineName} id="medicine" onChange={medicineNameChangeHandler}/>
             </div>
-            <div>
+            <div className={classes['form-group']}>
                 <label htmlFor="desc">Description</label>
                 <input type="text" value={medicine.description} id="desc"onChange={descriptionChangeHandler}/>
             </div>
-            <div>
+            <div className={classes['form-group']}>
                 <label htmlFor="amount">price</label>
                 <input type="number" value={medicine.price} id="amount" onChange={priceChangeHandler}/>
             </div>
-            <div>
+            <div className={classes['form-group']}>
                 <label htmlFor="quantity">QuantityAvailable</label>
                 <input type="number" value={medicine.quantityAvailable}id="quantity" onChange={quantityAvailableChangeHandler}/>
             </div>
-            <div>
+            <div className={classes['form-actions']}>
                 <button type="submit">Add</button>
             </div>
         </form>
